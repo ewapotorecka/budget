@@ -1,0 +1,50 @@
+.expenses-income-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.budget-container {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.form-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+	background-color: rgba( 223, 228, 234, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100vw;
+	height: 100px;
+	border-bottom: 2px solid;
+}
+
+.add-transaction {
+	background-color: white;
+	border: 2px solid #dfe4ea;
+    border-radius: 4px;
+    height: 50px;
+    width: 150px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-transaction:hover {
+	background-color: #f1f2f6;
+	border: 2px solid #dfe4ea;
+}

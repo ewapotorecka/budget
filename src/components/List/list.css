@@ -1,0 +1,64 @@
+.list-container {
+	margin-top: 50px;
+}
+
+.title {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 0 25px 25px 25px;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.incomes {
+    background-color: #2FD573;
+    color: #ffffff;
+    text-align: left;
+}
+
+.expenses {
+	background-color: #FF4658;
+    color: #ffffff;
+    text-align: left;;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.incomes-body tr:last-of-type {
+    border-bottom: 2px solid  #2FD573;;
+}
+
+.expenses-body tr:last-of-type {
+    border-bottom: 2px solid  #FF4658;;
+}
+
+.styled-table tbody tr:hover {
+	background-color: #f3f3f3;
+}
+
+
+.remove-button {
+	float: right;
+	cursor: pointer;
+	background-color: white;
+	color: #57606f;
+	border: 2px solid #57606f;
+	border-radius: 4px;
+}
+
+.remove-button:hover {
+	border: 2px solid black;
+	color: black;
+}
