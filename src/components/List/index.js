@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactComponent as Remove } from '../../svg/001-dustbin.svg';
 import './list.css';
 
 class List extends React.Component {
@@ -27,39 +28,18 @@ class List extends React.Component {
 					<tbody className={ `${this.type}-body`}>
 					{ this.state.data.map( ( element ) => {
 							return (
-								<tr>
+								<tr key={`${element.name}${element.amount}`}>
 									<td>{ element.name }</td>
 									<td>{ element.category }</td>
 									<td>{ element.amount }</td>
 									<td>
-									<button className='remove-button' onClick={ () => this.handleClick( element.id, this.type ) }>Remove</button>
+									<button className='remove-button' onClick={ () => this.handleClick( element.id, this.type ) }><Remove width='20px' height='20px'/></button>
 									</td>
 								</tr>
 							);
 						} ) }
 					</tbody>
 				</table>
-				{/* <div className='content-container'>
-					<div className='titles-container'>
-						<div className='list-name'><h4>Name</h4></div>
-						<div className='list-category'><h4>Category</h4></div>
-						<div className='list-amount'><h4>Amount</h4></div>
-					</div>
-					<div className={`list-content ${this.type}`}>
-						{ this.state.data.map( ( element ) => {
-							return (
-								<div className='content' key={ element.id }>
-									<div className='list-name'>{ element.name }</div>
-									<div className='list-category'>{ element.category }</div>
-									<div className='list-amount'>
-										{ element.amount }
-										<button className='remove-button' onClick={ () => this.handleClick( element.id, this.type ) }>Remove</button>
-									</div>
-								</div>
-							);
-						} ) }
-					</div>
-				</div> */}
 			</div>
 		);
 	}
