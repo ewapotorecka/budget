@@ -29,10 +29,6 @@
 .form-element-container p {
 	position: relative;
 }
-/* 
-.form-element-container input, select {
-	margin-left: 5px;
-} */
 
 .input-container {
 	min-width: 250px;
@@ -44,19 +40,26 @@
 .close-button {
 	width: 25px;
 	height: 25px;
-
 	border-radius: 4px;
 	font-weight: bold;
 	cursor: pointer;
 	background-color: white;
 	color: #57606f;
 	border:  none;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.close-button svg {
+	width: 100%;
+	height: 100%;
 }
 
 .close-button:hover {
 	border: 1px solid black;
 	color: black;
 	border-radius: 50%;
+	padding: 0;
 }
 
 .submit-button {
@@ -80,3 +83,14 @@
 .submit {
 	justify-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+	.input-container {
+		min-width: 150px;
+		margin-left: 10px;
+	}
+	.label-title {
+		margin-right: 10px;
+		min-width: 150px;
+	}
+  }

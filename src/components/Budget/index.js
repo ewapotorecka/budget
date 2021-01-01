@@ -12,7 +12,7 @@ class Budget extends React.Component {
 			expenses: this.props.expenses,
 			incomes: this.props.incomes,
 			budget: this.calculateBudget( this.props.incomes, this.props.expenses ),
-			formVisibility: 'hidden'
+			display: 'none'
 		}
 
 		this.updateState = this.updateState.bind( this );
@@ -22,16 +22,16 @@ class Budget extends React.Component {
 		return (
 			<div className='budget-container'>
 				<div className='header-container' style={ this.state.budget > 0 ? { backgroundColor: '#2ed573' } : { backgroundColor: '#ff4757' } }>
-					<Display value={ this.state.budget }/>
-					<button onClick={ () => this.setState( { formVisibility: 'visible' } ) } className='add-transaction'>Add transaction</button>
+					<Display value={ this.state.budget } />
+					<button onClick={ () => this.setState( { display: 'flex' } ) } className='add-transaction'>Add transaction</button>
 				</div>
 				<div className='expenses-income-container'>
-					<List data={ this.state.expenses } type='expenses' onRemove={ this.updateState }/>
-					<List data={ this.state.incomes } type='incomes' onRemove={ this.updateState }/>
+					<List data={ this.state.expenses } type='expenses' onRemove={ this.updateState } />
+					<List data={ this.state.incomes } type='incomes' onRemove={ this.updateState } />
 				</div>
-				<div className='form-container' style={ { visibility: this.state.formVisibility } }>
-				<Form onFormSubmit={ this.updateState } onClose={ () => this.setState( { formVisibility: 'hidden' } ) } />
-			</div>
+				<div className='form-container' style={ { display: this.state.display } }>
+					<Form onFormSubmit={ this.updateState } onClose={ () => this.setState( { display: 'none' } ) } />
+				</div>
 			</div>
 		);
 	}
@@ -56,7 +56,7 @@ class Budget extends React.Component {
 		if ( change === 'remove' ) {
 			for ( let i = 0; i < data.length; i++ ) {
 
-				if ( data[i].id === id ) {
+				if ( data[ i ].id === id ) {
 					data.splice( i, 1 );
 				}
 			}
@@ -70,7 +70,7 @@ class Budget extends React.Component {
 		this.setState( { type: data }, () => {
 			this.setState( { budget: this.calculateBudget( this.state.incomes, this.state.expenses ) } );
 			localStorage.setItem( type, JSON.stringify( data ) );
-			this.setState( { formVisibility: 'hidden' } );
+			this.setState( { display: 'none' } );
 		} );
 	}
 }
